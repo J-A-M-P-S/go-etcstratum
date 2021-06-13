@@ -1152,16 +1152,6 @@ func convertPaymentsResults(raw *redis.ZSliceCmd) []map[string]interface{} {
 		result = append(result, tx)
 	}
 	return result
-	var reverse []map[string]interface{}
-	for i := len(result) - 1; i >= 0; i-- {
-		reverse = append(reverse, result[i])
-	}
-	return reverse
-	var reverse []map[string]interface{}
-	for i := len(result) - 1; i >= 0; i-- {
-		reverse = append(reverse, result[i]);
-	}
-	return reverse
 }
 
 func convertPaymentChartsResults(raw *redis.ZSliceCmd) []*PaymentCharts {
