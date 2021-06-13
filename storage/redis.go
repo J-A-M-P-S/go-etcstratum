@@ -329,6 +329,9 @@ func (r *RedisClient) GetNodeStates() ([]map[string]interface{}, error) {
 
 func (r *RedisClient) checkPoWExist(height uint64, params []string) (bool, error) {
 	r.client.ZRemRangeByScore(r.formatKey("pow"), "-inf", fmt.Sprint("(", height-8))
+	
+	fmt.Println(strings.Join(params, ":"))
+	
 	val, err := r.client.ZAdd(r.formatKey("pow"), redis.Z{Score: float64(height), Member: strings.Join(params, ":")}).Result()
 	return val == 0, err
 }
