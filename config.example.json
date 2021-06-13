@@ -3,6 +3,9 @@
 	"coin": "etc",
 	"name": "main",
 	"network": "classic",
+	
+	"avgBlockTime": 14.4,
+	"blockTimeWindow": 300,
 
 	"proxy": {
 		"enabled": true,
