@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/yvasiyarov/gorelic"
+	"github.com/J-A-M-P-S/structs"
 
 	"github.com/J-A-M-P-S/go-etcstratum/api"
 	"github.com/J-A-M-P-S/go-etcstratum/payouts"
@@ -26,7 +27,8 @@ func startProxy() {
 }
 
 func startApi() {
-	s := api.NewApiServer(&cfg.Api, backend)
+	settings := structs.Map(&cfg)
+	s := api.NewApiServer(&cfg.Api, settings, backend)
 	s.Start()
 }
 
