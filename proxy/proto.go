@@ -34,6 +34,12 @@ type JSONRpcResp struct {
 	Error   interface{}     `json:"error,omitempty"`
 }
 
+type JSONRpcRespNH struct {
+	Result  interface{}      `json:"result"`
+	Error   interface{}      `json:"error"`
+	Id      *json.RawMessage `json:"id"`
+}
+
 type SubmitReply struct {
 	Status string `json:"status"`
 }
