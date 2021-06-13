@@ -49,7 +49,6 @@ type Proxy struct {
 	HealthCheck bool  `json:"healthCheck"`
 
 	Stratum Stratum `json:"stratum"`
-
 	StratumNiceHash StratumNiceHash `json:"stratum_nice_hash"`
 }
 
